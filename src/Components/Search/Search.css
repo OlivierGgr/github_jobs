@@ -1,0 +1,52 @@
+.searchContainer {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#fulltimeLabel {
+  font-size: 0.7rem;
+}
+
+.smallSearchContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.smallInputsContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.smallLocationFulltimeContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#searchByTerm {
+  float: left;
+  width: 100%;
+}
+
+.smallButtonContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-right: 5%;
+}
+
+.smallButtonContainer button {
+  background-color: #6AD5CE;
+}
+/*# sourceMappingURL=Search.css.map */

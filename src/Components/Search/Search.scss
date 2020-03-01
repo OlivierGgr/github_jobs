@@ -1,0 +1,39 @@
+// @use "../../Main" as Main;
+// $btn: Main.$buttonColor;
+
+.searchContainer {
+    width: 100%;
+    display: flex;
+}
+
+#fulltimeLabel {
+    font-size: 0.7rem;
+}
+
+.smallSearchContainer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.smallInputsContainer{
+    display: flex;
+    flex-direction: column;
+}
+
+.smallLocationFulltimeContainer {
+    display:flex
+}
+
+#searchByTerm {
+    float: left;
+    width: 100%;
+}
+
+.smallButtonContainer {
+    display: flex;
+    margin-right: 5%;
+}
+
+.smallButtonContainer button{
+    background-color: #6AD5CE;
+}
