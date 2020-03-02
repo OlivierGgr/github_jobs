@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef} from 'react';
 import './Search.css';
 
-function Search() {
+function Search(props) {
 
     const [userSearch, setUserSearch] = useState('')
     const [userLocation, setUserLocation] = useState('')
@@ -11,11 +11,16 @@ function Search() {
     const didMountRef = useRef(false)
     useEffect(() => {
         if(didMountRef.current) { 
-            userSearch !== '' ? console.log(userSearch) : console.log("nothing happened to user search")
-            userLocation !== '' ? console.log(userLocation) : console.log("nothing happened to user location")
-            fullTime !== false ? console.log(fullTime) : console.log(fullTime)
+            // userSearch !== '' ? console.log(userSearch) : console.log("nothing happened to user search")
+            // userLocation !== '' ? console.log(userLocation) : console.log("nothing happened to user location")
+            // fullTime !== false ? console.log(fullTime) : console.log(fullTime)
+            // userSearchInputs([userSearch, userLocation, fullTime])
         } else didMountRef.current = true
     })
+
+    const userSearchInputs = (data) => {
+        props.dataFromSearch(data)
+    }
 
     const smallScreen = () => {
         return(
@@ -38,7 +43,7 @@ function Search() {
             </div>
             
             <div className="smallButtonContainer">
-                <button>Search</button>
+                <button onClick={() => userSearchInputs([userSearch, userLocation, fullTime])}>Search</button>
             </div>
         </div>
         )
@@ -60,7 +65,7 @@ function Search() {
                         onClick={() => setFullTime(!fullTime)}/>
                     </div>
                     <div className="buttonContainer">
-                        <button>Search</button>
+                        <button onClick={() => userSearchInputs([userSearch, userLocation, fullTime])}>Search</button>
                     </div>
                 </div>
               )

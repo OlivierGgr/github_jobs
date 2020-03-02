@@ -4,27 +4,11 @@ import './Job.css'
 function Job(props){
     const dateFormatting = () => {
         let jobDate = props.created_at.split(' ')
-        console.log(jobDate)
         return `${jobDate[2]} ${jobDate[1]} ${jobDate[5]}`
     }
 
     return(
         <div className="jobItemContainer">
-            {/* <div className="jobItemSmall">
-                <span>
-                    {props.title}
-                </span>
-                <span>
-                    {props.location}
-                </span>
-                <span>
-                    {props.company}
-                </span>
-                <span>
-                    {dateFormatting()}
-                </span>
-            </div> */}
-
             <div className="jobCard">
                 <div className="jobCardCompanyLogo">
                     {props.logo !== null ?
@@ -41,12 +25,13 @@ function Job(props){
                     {props.company}
                     </span>
                     <span>
-                    {props.location}
+                    {props.location} - {props.type}
                 </span>
                 <span>
                     {dateFormatting()}
                 </span>
                     </div>
+                <hr style={{margin: "8px 10%", border: "1px solid #92BCEA"}}/>
                 </div>
             </div>
         </div>

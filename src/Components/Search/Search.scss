@@ -7,21 +7,33 @@
 }
 
 #fulltimeLabel {
-    font-size: 0.7rem;
+    font-size: 0.8rem;
+    color:white;
+    font-weight: bold;
 }
 
 .smallSearchContainer {
     display: flex;
     justify-content: space-between;
+    margin: 0px 3%;
 }
 
 .smallInputsContainer{
     display: flex;
     flex-direction: column;
+    height: 7vh;
+    justify-content: space-between;
 }
 
 .smallLocationFulltimeContainer {
-    display:flex
+    display:flex;
+    width: 75vw;
+    justify-content: space-between;
+}
+
+.smallFullTimeContainer{
+    display: flex;
+    align-items: center;
 }
 
 #searchByTerm {
@@ -31,9 +43,11 @@
 
 .smallButtonContainer {
     display: flex;
-    margin-right: 5%;
+    align-items: center;
 }
 
 .smallButtonContainer button{
     background-color: #6AD5CE;
+    height: 66%;
+    border-radius: 6%;
 }

@@ -1,5 +1,6 @@
 .jobItemContainer {
-  background-color: #7A93AC;
+  background-color: #fff;
+  padding-top: 2%;
 }
 
 .jobItemSmall {
@@ -15,24 +16,28 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  text-align: left;
 }
 
 .jobCardCompanyLogo {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  width: 30%;
+}
+
+.jobCardCompanyLogo img {
+  width: 100%;
+  padding-top: 10%;
 }
 
 .jobCardTitle {
   font-size: 1rem;
   font-weight: 600;
+  color: #2A2E45;
 }
 
 .jobCardInfo {
+  width: 100%;
   margin: 3%;
 }
 
@@ -47,9 +52,26 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 14vh;
+  height: 13vh;
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
+  color: #9B9FA0;
+}
+
+.jobCardBody span:first-child {
+  color: #808384;
+  font-weight: 600;
+}
+
+.jobCardBody span:nth-child(2) {
+  font-size: 0.9rem;
+  font-style: italic;
+}
+
+.jobCardBody span:last-child {
+  color: #808384;
+  font-size: 0.8rem;
+  font-weight: 600;
 }
 /*# sourceMappingURL=Job.css.map */
