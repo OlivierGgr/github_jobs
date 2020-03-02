@@ -72,5 +72,11 @@
   background-color: #6AD5CE;
   height: 66%;
   border-radius: 6%;
+  font-weight: 600;
+  color: white;
+}
+
+.smallButtonContainer button:hover {
+  color: #6AD5CE;
 }
 /*# sourceMappingURL=Search.css.map */
