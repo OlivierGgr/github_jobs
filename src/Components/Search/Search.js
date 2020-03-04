@@ -11,10 +11,6 @@ function Search(props) {
     const didMountRef = useRef(false)
     useEffect(() => {
         if(didMountRef.current) { 
-            // userSearch !== '' ? console.log(userSearch) : console.log("nothing happened to user search")
-            // userLocation !== '' ? console.log(userLocation) : console.log("nothing happened to user location")
-            // fullTime !== false ? console.log(fullTime) : console.log(fullTime)
-            // userSearchInputs([userSearch, userLocation, fullTime])
         } else didMountRef.current = true
     })
 
@@ -39,16 +35,16 @@ function Search(props) {
                         onClick={() => setFullTime(!fullTime)}/>
                     </div>
                 </div>
-                
+
             </div>
-            
+
             <div className="smallButtonContainer">
                 <button onClick={() => userSearchInputs([userSearch, userLocation, fullTime])}>Search</button>
             </div>
         </div>
         )
     }
-    
+
     const standardScreen = () => {
         return(
             (

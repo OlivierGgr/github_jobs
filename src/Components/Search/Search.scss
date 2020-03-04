@@ -4,6 +4,27 @@
 .searchContainer {
     width: 100%;
     display: flex;
+    margin:2% 0%;
+    height: 4vh;
+    justify-content: center;
+    .searchBarContainer{
+        padding: 0% 0.8%;
+        height: 66%;
+        width:25vw;
+        input {
+            height: 100%;
+            width: 100%;
+            font-size:0.9rem;
+        }
+    }
+    .locationContainer{
+        padding: 0% 0.8%;
+        height: 66%;
+        input {
+            height: 100%;
+            font-size:0.9rem;
+        }
+    }
 }
 
 #fulltimeLabel {
@@ -15,7 +36,8 @@
 .smallSearchContainer {
     display: flex;
     justify-content: space-between;
-    margin: 0px 3%;
+    margin: 2% 3%;
+    margin-bottom: 5%;
 }
 
 .smallInputsContainer{
@@ -34,6 +56,7 @@
 .smallFullTimeContainer{
     display: flex;
     align-items: center;
+    height:100%
 }
 
 #searchByTerm {
@@ -49,6 +72,17 @@
 .smallButtonContainer button{
     background-color: #6AD5CE;
     height: 66%;
+    border-radius: 6%;
+    font-weight: 600;
+    color: white;
+        &:hover {
+            color: #6AD5CE;
+        }
+}
+
+.buttonContainer button{
+    background-color: #6AD5CE;
+    height: 85%;
     border-radius: 6%;
     font-weight: 600;
     color: white;

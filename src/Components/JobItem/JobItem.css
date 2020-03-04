@@ -1,0 +1,105 @@
+.jobItemContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.searchBodyContainer {
+  margin-bottom: 8%;
+}
+
+.jobItemContainerTop {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 4% 0%;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.jobItemContainerTopTitle {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #2A2E45;
+}
+
+.jobItemContainerTopReturn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  margin: 4%;
+}
+
+.jobItemContainerTopReturn button {
+  border-radius: 6%;
+  font-weight: 600;
+  color: white;
+}
+
+.jobItemContainerTopReturnBtn {
+  height: 100%;
+  background-color: #92BCEA;
+}
+
+.jobItemContainerTopReturnBtn:hover {
+  color: #6AD5CE;
+}
+
+.jobItemContainerApplyBtn {
+  height: 66%;
+  background-color: #6AD5CE;
+}
+
+.jobItemContainerApplyBtn:hover {
+  color: #6AD5CE;
+}
+
+.jobItemContainerDate {
+  font-size: 0.8rem;
+}
+
+.jobItemContainerCompany {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 7%;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.jobItemContainerCompanyLogo img {
+  height: 1.6rem;
+}
+
+.info {
+  color: #808384;
+  font-weight: 600;
+}
+
+.jobItemContainerInfo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  margin-top: 5%;
+}
+
+.jobItemContainerDescription {
+  margin: 4%;
+  text-align: left;
+}
+/*# sourceMappingURL=JobItem.css.map */

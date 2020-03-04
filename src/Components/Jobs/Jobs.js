@@ -1,15 +1,21 @@
 import React from 'react'
-import './Job.css'
+import { Link } from 'react-router-dom'
+import './Jobs.css'
 
-function Job(props){
+function Jobs(props){
     const dateFormatting = () => {
         let jobDate = props.created_at.split(' ')
         return `${jobDate[2]} ${jobDate[1]} ${jobDate[5]}`
     }
 
+    const expand = (id) => {
+        // props.dataFromSearch(id)
+    }
+
     return(
         <div className="jobItemContainer">
-            <div className="jobCard">
+            <div className="jobCard" 
+            >
                 <div className="jobCardCompanyLogo">
                     {props.logo !== null ?
                         <img src={props.logo} alt={props.company} style={{ height: "1.6rem"}}/>
@@ -18,7 +24,13 @@ function Job(props){
                 </div>
                 <div className="jobCardInfo">
                     <div className="jobCardTitle">
-                    {props.title}
+                    <Link 
+                        style={{ textDecoration: "none", color: "inherit"}}
+                        to={{ pathname: "/jobOffer/"+props.id,
+                        key:props.id,
+                        }}>
+                        {props.title}
+                    </Link>
                 </div>
                 <div className="jobCardBody">
                     <span>
@@ -32,6 +44,7 @@ function Job(props){
                 </span>
                     </div>
                 <hr style={{margin: "8px 10%", border: "1px solid #92BCEA"}}/>
+                {expand(props.id)}
                 </div>
             </div>
         </div>
@@ -51,4 +64,4 @@ function Job(props){
 
 // id
 
-export default Job;
+export default Jobs;

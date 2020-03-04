@@ -1,44 +1,52 @@
 import React, { useState, useEffect } from 'react';
 import { getJobsOnMount, getJobsFilter } from './API/GithubAPI'
 import Search from './Components/Search/Search'
-import Job from './Components/Job/Job'
+import Jobs from './Components/Jobs/Jobs'
+import JobItem from './Components/JobItem/JobItem'
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+
 import './App.css';
 
 function App() {
-
-  const [offers, setOffers] = useState([]);
+  const [page, setPage] = useState(1)
+  const [offers, setOffers] = useState();
   const [isLoading, setIsLoading] = useState(true)
+  const [selectedOffer, setSelectedOffer] = useState()
+  const [loadMore, setLoadMore] = useState(false)
 
-  // async function fetchOffers() {
-  //   await fetch("https://cors-anywhere.herokuapp.com/https://jobs.github.com/positions.json?")
-  //   .then(res => res.json())
-  //   .then(res => {
-  //     setOffers(res)
-  //     setIsLoading(false)
-  //   })
-  //   .catch(err => console.log(err))
-  // }
-
-  // useEffect(() => {fetchOffers()}, []);
   useEffect(() => {
-    getJobsOnMount()
+    getJobsOnMount(page)
     .then(res => {
           setOffers(res)
           setIsLoading(false)
-        })
+    })
+    .catch(new Error('bad fetch'))
   }, []);
+
+  const loadMorePositions = () => {
+    setPage(page +1)
+    getJobsOnMount(page +1)
+      .then(res => {
+        Array.prototype.push.apply(offers, res)
+      })
+    setLoadMore(true)
+  }
+
+  console.log(offers)
 
 
   const jobsFactory = (data) => {
     if (!isLoading) {
       return data !== [] ?
       data.map((item, index) => 
-      { return <Job title={item.title} 
+      { return <Jobs title={item.title} 
                     location={item.location} 
                     company={item.company} 
                     created_at={item.created_at}
                     type={item.type}
                     logo={item.company_logo}
+                    id={item.id}
+                    // dataFromSearch={id => setSelectedOffer(id)}
                     /> 
                   })
                   : "no offers match"
@@ -46,22 +54,9 @@ function App() {
   }
 
   const filterJobs = (incomingData) => {
-    // console.log("incomingData from App => " + incomingData)
-    // console.log(incomingData[0])
-    // console.log(incomingData[1])
-    // console.log(incomingData[2])
-    // let filteredOffers = offers
-    //   .filter(offer => 
-    //     offer.title.toLowerCase().includes(incomingData[0]) || offer.title.toLowerCase().includes(incomingData[0]))
-    //   .filter(offerFilteredByTerm => 
-    //     offerFilteredByTerm.location == incomingData[1] && incomingData[1] !== "")
-    //   .filter(offerFilteredByTermAndLocation =>
-    //     offerFilteredByTermAndLocation.type.toLowerCase() === "full time" && incomingData[2] === true)
-    // jobsFactory(filteredOffers)
     setOffers([])
     setIsLoading(true)
     incomingData.forEach(element => element === "" ? element = false : false)
-    console.log("incomingData in filterJobs function : "+incomingData)
     getJobsFilter(incomingData[0], incomingData[2], incomingData[1])
       .then(res => {
         setOffers(res)
@@ -71,18 +66,37 @@ function App() {
 
   return (
     <div className="App">
+      {console.log("re-rendered")}
       <div className="titleContainer">
         <h1>Github Jobs</h1>
       </div>
 
       <div className="bodyContainer" >
-        <div className="searchBodyContainer" style={{marginBottom:'8%'}}>
-          <Search dataFromSearch={data => filterJobs(data)}/>
+        <div className="searchBodyContainer" style={{marginBottom:'5%'}}>
+        <Router>
+          <Switch>
+            <Route exact path="/" render={() => (
+              <div>
+                <Search dataFromSearch={data => filterJobs(data)}/>
+                <div className="listResultsContainer">
+                    <div className="jobContainerTopBlueBar"></div>
+                    {jobsFactory(offers)}
+                </div>
+              </div>
+            )}>
+            </Route>
+            <Route path="/jobOffer/:id" render={() => (
+              <div className="listResultsContainer">
+                <div className="jobContainerTopBlueBar"></div>
+                <JobItem 
+                selectedJob={offers.filter(offer => offer.id == selectedOffer)} 
+                />
+              </div>
+            )}/>
+          </Switch>
+        </Router>
         </div>
-        <div className="listResultsContainer">
-          <div className="jobContainerTopBlueBar"></div>
-          {jobsFactory(offers)}
-        </div>
+        <button id="seeMoreBtn" onClick={() => loadMorePositions()}>See more</button>
       </div>
     </div>
   );

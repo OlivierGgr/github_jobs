@@ -1,0 +1,128 @@
+.jobItemContainer {
+  background-color: #fff;
+  padding-top: 2%;
+}
+
+.jobItemSmall {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  font-size: 0.9rem;
+}
+
+.jobCard {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0% 2%;
+}
+
+.jobCardCompanyLogo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 30%;
+}
+
+.jobCardCompanyLogo img {
+  width: 100%;
+  padding-top: 10%;
+}
+
+.jobCardTitle {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #2A2E45;
+}
+
+.jobCardInfo {
+  width: 100%;
+  margin: 3%;
+}
+
+.jobCardBody {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 13vh;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  color: #9B9FA0;
+}
+
+.jobCardBody span:first-child {
+  color: #808384;
+  font-weight: 600;
+}
+
+.jobCardBody span:nth-child(2) {
+  font-size: 0.9rem;
+  font-style: italic;
+}
+
+.jobCardBody span:last-child {
+  color: #808384;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+@media only screen and (min-width: 500px) {
+  .jobItemContainer {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  .jobCard {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .jobCardCompanyLogo {
+    height: 3.6rem;
+    width: 6%;
+  }
+  .jobCardCompanyLogo img {
+    height: 100%;
+    width: 100%;
+    padding-top: 0;
+  }
+  .jobCardInfo {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+  }
+  .jobCardInfo .jobCardBody {
+    width: 100%;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    height: 4vh;
+  }
+}
+/*# sourceMappingURL=Jobs.css.map */
