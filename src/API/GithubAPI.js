@@ -3,7 +3,7 @@ export function getJobsOnMount(page){
     console.log(url)
     return fetch(url)
         .then(res => res.json())
-        .catch(err => new Error(err))
+        .catch(err => console.log(err))
 }
 
 export function getJobsFilter(text, fullTime, location){

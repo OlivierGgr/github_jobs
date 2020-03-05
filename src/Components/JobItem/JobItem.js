@@ -12,7 +12,6 @@ function JobItem(props) {
 
     useEffect(() =>  {
         getJobById(id)
-        // getJobById(props.selectedJob[0].id)
             .then(res => {
                 setJobDetails(res)
                 setIsLoading(false)
@@ -36,7 +35,6 @@ function JobItem(props) {
                 {/* <div className="jobItemContainerTopElements"> */}
                     <div className="jobItemContainerTopReturn">
                         <Link to="/"><button className="jobItemContainerTopReturnBtn">Return</button></Link>
-                        <button className="jobItemContainerApplyBtn">Apply</button>
                     </div>
                     <div className="jobItemContainerTopTitle">
                         {jobDetails.title}
@@ -60,10 +58,15 @@ function JobItem(props) {
             <div className="jobItemContainerDescription">
             {parse(jobDetails.description)}
             </div>
+            <hr id="jobItemHrToApply"/>
             <div className="jobItemContainerApply">
-                <button className="jobItemContainerApplyBtn">
+                <p id="howToApply">
+                    How to apply
+                </p>
+                {parse(jobDetails.how_to_apply)}
+                {/* <button className="jobItemContainerApplyBtn">
                     Apply
-                </button>
+                </button> */}
             </div>
         </div>
     )

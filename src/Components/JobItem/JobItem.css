@@ -53,16 +53,21 @@
 }
 
 .jobItemContainerTopReturnBtn:hover {
-  color: #6AD5CE;
+  color: #92BCEA;
+  background-color: #2A2E45;
+  cursor: pointer;
 }
 
 .jobItemContainerApplyBtn {
   height: 66%;
   background-color: #6AD5CE;
+  color: white;
 }
 
 .jobItemContainerApplyBtn:hover {
   color: #6AD5CE;
+  background-color: #2A2E45;
+  cursor: pointer;
 }
 
 .jobItemContainerDate {
@@ -101,5 +106,58 @@
 .jobItemContainerDescription {
   margin: 4%;
   text-align: left;
+}
+
+@media only screen and (min-width: 500px) {
+  .jobItemContainer {
+    padding-top: 0;
+  }
+  .jobItemContainer .jobItemContainerTop {
+    margin: 0;
+    margin-top: 4%;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .jobItemContainer .jobItemContainerTop .jobItemContainerTopTitle {
+    font-size: 1.8rem;
+    margin-right: 2%;
+  }
+  .jobItemContainer .jobItemContainerTop .jobItemContainerTopReturn {
+    margin: 0;
+    width: 16%;
+  }
+  .jobItemContainer .jobItemContainerTop .jobItemContainerTopReturn .jobItemContainerTopReturnBtn {
+    font-weight: 700;
+    font-size: 0.8rem;
+  }
+  .jobItemContainer .jobItemContainerCompany {
+    margin-top: 4%;
+    display: block;
+  }
+  .jobItemContainer .jobItemContainerInfo {
+    margin-top: 0;
+  }
+  .jobItemContainer .jobItemContainerDescription {
+    font-size: 1.1rem;
+  }
+  .jobItemContainerApplyBtn {
+    height: 100%;
+    font-weight: 700;
+    font-size: 0.8rem;
+  }
+  #howToApply {
+    font-size: 1.3rem;
+    color: #2A2E45;
+    font-weight: 600;
+  }
+  #jobItemHrToApply {
+    width: 66%;
+    border: 1.1px solid #92BCEA;
+  }
 }
 /*# sourceMappingURL=JobItem.css.map */

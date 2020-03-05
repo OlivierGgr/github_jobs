@@ -72,6 +72,7 @@
     .jobCardCompanyLogo {
         height: 3.6rem;
         width:6%;
+        align-items: center;
         img {
             height: 100%;
             width:100%;
@@ -88,5 +89,8 @@
             flex-direction: row;
             height:4vh;
         }
+    hr {
+        display:none;
+    }
     }
 }

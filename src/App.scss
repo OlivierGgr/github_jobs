@@ -1,0 +1,55 @@
+.App {
+    text-align: center;
+    height:100vh;
+    background-color: #2A2E45;
+    font-family: "helvetica";
+    max-width: 1500px;
+    margin: 0 auto;
+  }
+  
+  .bodyContainer{
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .titleContainer {
+    height:15vh;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  h1 {
+    font-size:2.5rem;
+    margin: 0;
+    color: #92BCEA;
+  }
+  
+  .jobContainerTopBlueBar {
+    height: 1vh;
+    background-color: #92BCEA;
+  }
+  
+  #seeMoreBtn {
+    width: 13%;
+    margin: 0 auto;
+    background: #92BCEA;
+    color: white;
+    margin-bottom: 2%;
+    /* border-radius: 3%; */
+    padding: 10px;
+    font-weight: 700;
+  }
+  
+  .loadingMessageContainer {
+    color: white;
+    margin:5% 0;
+    font-weight: 600;
+    font-size: 1.2rem;
+  }
+  
+  @media only screen and (min-width: 500px) {
+    h1 {
+      font-size: 2.9rem;
+    }
+  }

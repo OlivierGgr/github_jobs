@@ -20,7 +20,6 @@ function App() {
           setOffers(res)
           setIsLoading(false)
     })
-    .catch(new Error('bad fetch'))
   }, []);
 
   const loadMorePositions = () => {
@@ -46,11 +45,18 @@ function App() {
                     type={item.type}
                     logo={item.company_logo}
                     id={item.id}
-                    // dataFromSearch={id => setSelectedOffer(id)}
+                    key={index}
                     /> 
                   })
-                  : "no offers match"
-    } else return "Loading ..."
+                  : 
+                  <h2>
+                    no positions available
+                  </h2>
+    } else return (
+      <div className="loadingMessageContainer">
+        Loading ...
+      </div>
+    )
   }
 
   const filterJobs = (incomingData) => {
@@ -82,21 +88,19 @@ function App() {
                     <div className="jobContainerTopBlueBar"></div>
                     {jobsFactory(offers)}
                 </div>
+                <button id="seeMoreBtn" onClick={() => loadMorePositions()}>See more</button>
               </div>
             )}>
             </Route>
             <Route path="/jobOffer/:id" render={() => (
               <div className="listResultsContainer">
                 <div className="jobContainerTopBlueBar"></div>
-                <JobItem 
-                selectedJob={offers.filter(offer => offer.id == selectedOffer)} 
-                />
+                <JobItem />
               </div>
             )}/>
           </Switch>
         </Router>
         </div>
-        <button id="seeMoreBtn" onClick={() => loadMorePositions()}>See more</button>
       </div>
     </div>
   );
