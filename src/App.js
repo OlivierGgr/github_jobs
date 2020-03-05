@@ -72,7 +72,6 @@ function App() {
 
   return (
     <div className="App">
-      {console.log("re-rendered")}
       <div className="titleContainer">
         <h1>Github Jobs</h1>
       </div>
