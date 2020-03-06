@@ -3,7 +3,7 @@ import { getJobsOnMount, getJobsFilter } from './API/GithubAPI'
 import Search from './Components/Search/Search'
 import Jobs from './Components/Jobs/Jobs'
 import JobItem from './Components/JobItem/JobItem'
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import './App.css';
 
@@ -11,8 +11,6 @@ function App() {
   const [page, setPage] = useState(1)
   const [offers, setOffers] = useState();
   const [isLoading, setIsLoading] = useState(true)
-  const [selectedOffer, setSelectedOffer] = useState()
-  const [loadMore, setLoadMore] = useState(false)
 
   useEffect(() => {
     getJobsOnMount(page)
@@ -28,11 +26,7 @@ function App() {
       .then(res => {
         Array.prototype.push.apply(offers, res)
       })
-    setLoadMore(true)
   }
-
-  console.log(offers)
-
 
   const jobsFactory = (data) => {
     if (!isLoading) {

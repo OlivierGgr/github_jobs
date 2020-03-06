@@ -38,6 +38,16 @@
   font-weight: bold;
 }
 
+.fullTimeContainer {
+  padding: 0 1%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
 .smallSearchContainer {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -107,6 +117,7 @@
 
 .smallButtonContainer button:hover {
   color: #6AD5CE;
+  background-color: white;
 }
 
 .buttonContainer button {
@@ -119,5 +130,6 @@
 
 .buttonContainer button:hover {
   color: #6AD5CE;
+  background-color: white;
 }
 /*# sourceMappingURL=Search.css.map */

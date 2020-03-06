@@ -8,8 +8,10 @@ import './JobItem.css'
 function JobItem(props) {
     const [jobDetails, setJobDetails] = useState()
     const [isLoading, setIsLoading] = useState(true)
+    // TAKE ID FROM URL
     const { id } = useParams()
 
+    // USE ID TO LOAD JOB POSITION
     useEffect(() =>  {
         getJobById(id)
             .then(res => {
@@ -18,13 +20,12 @@ function JobItem(props) {
             })
     }, []);
 
+    // FORMAT DATE FOR HUMAN EYES
     const dateFormatting = () => {
         let jobDate = jobDetails.created_at.split(' ')
         return `${jobDate[2]} ${jobDate[1]} ${jobDate[5]}`
     }
 
-    console.log(id)
-    console.log(jobDetails)
     return (isLoading ? 
         <div className="jobItemContainer">
             <h2>Loading</h2>
@@ -32,19 +33,15 @@ function JobItem(props) {
     :
         <div className="jobItemContainer">
             <div className="jobItemContainerTop">
-                {/* <div className="jobItemContainerTopElements"> */}
                     <div className="jobItemContainerTopReturn">
                         <Link to="/"><button className="jobItemContainerTopReturnBtn">Return</button></Link>
                     </div>
                     <div className="jobItemContainerTopTitle">
                         {jobDetails.title}
                     </div>
-                {/* </div> */}
-                
 
             </div>
             <div className="jobItemContainerDate info">
-                {/* {jobDetails.created_at} */}
                 {dateFormatting()}
             </div>
             <div className="jobItemContainerCompany">
@@ -64,9 +61,6 @@ function JobItem(props) {
                     How to apply
                 </p>
                 {parse(jobDetails.how_to_apply)}
-                {/* <button className="jobItemContainerApplyBtn">
-                    Apply
-                </button> */}
             </div>
         </div>
     )

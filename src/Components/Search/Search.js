@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef} from 'react';
+import React, { useState, useEffect} from 'react';
 import './Search.css';
 
 function Search(props) {
@@ -7,17 +7,12 @@ function Search(props) {
     const [userLocation, setUserLocation] = useState('')
     const [fullTime, setFullTime] = useState(false)
 
-    //didMountRef KEEPS USEEFFECT FROM BEING TRIGGERED ON MOUNT
-    const didMountRef = useRef(false)
-    useEffect(() => {
-        if(didMountRef.current) { 
-        } else didMountRef.current = true
-    })
-
+    // SENDING SEARCH DATA TO PARENT COMPONENT
     const userSearchInputs = (data) => {
         props.dataFromSearch(data)
     }
 
+    // SETTING UP SEARCH BAR FOR PHONE SCREENS (-500px)
     const smallScreen = () => {
         return(
             <div className="smallSearchContainer">
@@ -45,6 +40,7 @@ function Search(props) {
         )
     }
 
+    // SETTING UP SEARCH BAR FOR NON-PHONE SCREENS (+500px)
     const standardScreen = () => {
         return(
             (
@@ -67,19 +63,20 @@ function Search(props) {
               )
         )
     }
-        const [windowWidth, setWindowWidth] = useState(0);
-        const [windowHeight, setWindowHeight] = useState(0);
-        let resizeWindow = () => {
-          setWindowWidth(window.innerWidth);
-          setWindowHeight(window.innerHeight);
-        };
-      
-        useEffect(() => {
-          resizeWindow();
-          window.addEventListener("resize", resizeWindow);
-          return () => window.removeEventListener("resize", resizeWindow);
-        }, []);
 
+    // CONSIDERING WINDOW WIDTH TO ADAPT DISPLAY
+    const [windowWidth, setWindowWidth] = useState(0);
+    let resizeWindow = () => {
+        setWindowWidth(window.innerWidth);
+    };
+      
+    useEffect(() => {
+        resizeWindow();
+            window.addEventListener("resize", resizeWindow);
+        return () => window.removeEventListener("resize", resizeWindow);
+    }, []);
+
+    // ADAPT DISPLAY
     return windowWidth < 500 ?
         smallScreen()
         : standardScreen()

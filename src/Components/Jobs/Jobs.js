@@ -3,19 +3,15 @@ import { Link } from 'react-router-dom'
 import './Jobs.css'
 
 function Jobs(props){
+    // FORMAT DATE FOR HUMAN EYES
     const dateFormatting = () => {
         let jobDate = props.created_at.split(' ')
         return `${jobDate[2]} ${jobDate[1]} ${jobDate[5]}`
     }
 
-    const expand = (id) => {
-        // props.dataFromSearch(id)
-    }
-
     return(
         <div className="jobItemContainer">
-            <div className="jobCard" 
-            >
+            <div className="jobCard">
                 <div className="jobCardCompanyLogo">
                     {props.logo !== null ?
                         <img src={props.logo} alt={props.company} style={{ height: "1.6rem"}}/>
@@ -44,7 +40,6 @@ function Jobs(props){
                 </span>
                     </div>
                 <hr style={{margin: "8px 10%", border: "1px solid #92BCEA"}}/>
-                {expand(props.id)}
                 </div>
             </div>
         </div>
