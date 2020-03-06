@@ -78,7 +78,7 @@ function App() {
 
       <div className="bodyContainer" >
         <div className="searchBodyContainer" style={{marginBottom:'5%'}}>
-        <Router>
+        <Router basename={process.env.PUBLIC_URL}>
           <Switch>
             <Route exact path="/" render={() => (
               <div>
